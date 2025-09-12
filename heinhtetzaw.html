@@ -1,0 +1,408 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Profile - [Member Name]</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+
+        nav ul li a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+
+        nav ul li a:hover {
+            color: #667eea;
+        }
+
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #667eea;
+            transition: width 0.3s ease;
+        }
+
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+
+        .profile-container {
+            max-width: 900px;
+            margin: 120px auto 60px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: 700;
+            color: white;
+            border: 5px solid #f0f2f5;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+
+        .profile-role {
+            font-size: 1.2rem;
+            color: #667eea;
+            font-weight: 500;
+        }
+
+
+        .profile-section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+
+
+        .profile-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .section-title i {
+            transition: transform 0.3s ease;
+        }
+
+
+        .section-title.expanded i {
+            transform: rotate(90deg);
+        }
+
+
+        .section-content {
+            display: none;
+            padding-left: 20px;
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+
+        .section-content.show {
+            display: block;
+        }
+
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+
+        .skill-list li {
+            background: #e8f0fe;
+            color: #4a69bd;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+
+        .footer-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+
+        @media (max-width: 768px) {
+            .profile-container {
+                margin: 100px 20px 40px;
+                padding: 20px;
+            }
+
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+
+            .profile-role {
+                font-size: 1rem;
+            }
+
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">The Amazing Group</a>
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#members">Members</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">[Initials]</div>
+                <h1 class="profile-name">Hein Htet Zaw</h1>
+                <p class="profile-role">Management</p>
+            </div>
+
+
+            <div class="profile-section">
+                <h2 class="section-title">History <i class="fas fa-chevron-right"></i></h2>
+                <div class="section-content">
+                    <p>Motivated and versatile professional with a strong foundation in IT support, networking, and
+                        programming (Python, Java, SQL), complemented by certifications from Google, Oracle, and
+                        HarvardX. Currently pursuing Digital Business at SIBA College, Thailand. Passionate about
+                        creativity and visual storytelling, with strong graphic design skills—especially in Canva—for
+                        creating engaging content. Seeking to contribute as a Graphic Designer. Experienced in
+                        education, social impact, and entrepreneurship with proven leadership and communication
+                        abilities.</p>
+                </div>
+            </div>
+
+
+            <div class="profile-section">
+                <h2 class="section-title">Skills <i class="fas fa-chevron-right"></i></h2>
+                <div class="section-content">
+                    <ul class="skill-list">
+                        <li>Technical: Python, Java, SQL, IT Support, Computer Networking</li>
+                        <li>Legal/Research: Criminal Justice, Human Rights, Ethical Analysis (HarvardX)</li>
+                        <li>Languages: English (IELTS 6.0), Burmese (Native), Japanese (Intermediate), Thai (Basic)</li>
+                        <li>Soft Skills: Leadership, Content Writing, Public Speaking, Project Coordination </li>
+                        <!-- Add more skills as needed -->
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="profile-section">
+                <h2 class="section-title">Education <i class="fas fa-chevron-right"></i></h2>
+                <div class="section-content">
+                    <p>Victory Education Center (VEC), Mandalay
+                        High School Diploma | June 2018 – March 2020
+                        Passed matriculation exam with 2 Distinctions.
+                        BEHS Mandalay
+                        Primary & Secondary Education | June 2009 – March 2018</p>
+                </div>
+            </div>
+
+
+            <div class="profile-section">
+                <h2 class="section-title">Achievements <i class="fas fa-chevron-right"></i></h2>
+                <div class="section-content">
+                    <p>Google IT Support Professional
+                        Technical Support Fundamentals (2022) | The Bits and Bytes of Computer Networking (2022)
+                        Oracle Certified – Database Design & Java Programming (July 2024)
+                        Python 3 Certification (Programming Hub, 2024)
+                        HarvardX – Justice (Ethics & Law, 2023)
+                        SDGAcademyX – Human Rights, Human Wrongs (2024)
+                        IELTS – Overall Band 6.0 (CEFR B2, 2024)</p>
+                </div>
+            </div>
+
+
+            <div class="profile-section">
+                <h2 class="section-title">Future Plan <i class="fas fa-chevron-right"></i></h2>
+                <div class="section-content">
+                    <li>Short-Term (1–2 years):
+                        - Build a strong personal brand through freelance work in IT, graphic design, and education.
+                        - Complete current certifications and showcase skills via a personal website or portfolio.</li>
+                    <li> Mid-Term (3–5 years):
+                        - Launch a tech-driven social enterprise combining law, education, and digital tools.
+                        - Pursue advanced studies in law or digital governance to deepen expertise.</li>
+                    <li>Long-Term (5+ years):
+                        - Become a recognized leader in legal-tech or ethical innovation in Southeast Asia.
+                        - Scale MYTTA Foundation or similar ventures to create lasting social impact.</li>  
+                        
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#members">Members</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2025 The Amazing Group. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        document.querySelectorAll('.section-title').forEach(title => {
+            title.addEventListener('click', () => {
+                const content = title.nextElementSibling;
+                title.classList.toggle('expanded');
+                if (content.classList.contains('show')) {
+                    content.classList.remove('show');
+                    content.style.maxHeight = null;
+                } else {
+                    content.classList.add('show');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                }
+            });
+        });
+
+
+        // Adjust max-height on window resize
+        window.addEventListener('resize', () => {
+            document.querySelectorAll('.section-content.show').forEach(content => {
+                content.style.maxHeight = content.scrollHeight + 'px';
+            });
+        });
+    </script>
+</body>
+
+</html>
