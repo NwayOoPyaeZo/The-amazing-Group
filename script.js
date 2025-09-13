@@ -1,4 +1,5 @@
 /* script.js */
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -13,7 +14,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
 // Header scroll effect
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
@@ -24,22 +24,19 @@ window.addEventListener('scroll', () => {
     }
 });
 
-
-// Add loading animation to member cards
+// Add enhanced loading animation to member cards
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+            entry.target.style.animation = 'fadeInUpEnhanced 0.8s ease forwards';
         }
     });
 }, observerOptions);
-
 
 document.querySelectorAll('.member-card').forEach(card => {
     card.style.opacity = '0';

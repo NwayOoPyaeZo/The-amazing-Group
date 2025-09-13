@@ -356,15 +356,25 @@ footer {
 
 
 /* Animations */
-@keyframes fadeInUp {
-    from {
+/* Enhanced fadeInUp animation */
+@keyframes fadeInUpEnhanced {
+    0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(50px) scale(0.9) rotate(-2deg);
     }
 
-    to {
+    60% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-10px) scale(1.05) rotate(1deg);
+    }
+
+    80% {
+        transform: translateY(5px) scale(0.98) rotate(-1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1) rotate(0deg);
     }
 }
 
@@ -418,10 +428,10 @@ footer {
 }
 
 .profile-avatar {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
-    margin: 0 auto 20px;
+    margin: 0 auto 25px;
     overflow: hidden;
     border: 5px solid #f0f2f5;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -521,4 +531,12 @@ footer {
     .section-title {
         font-size: 1.5rem;
     }
+
+    .profile-avatar {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 20px;
+    }
 }
+
+/* End of styles.css */
