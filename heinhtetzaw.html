@@ -24,69 +24,160 @@
     </header>
 
     <main>
+        <!-- Profile Container -->
         <div class="profile-container">
-            <div class="profile-header">
+            <!-- Hero-Style Header -->
+            <div class="profile-header hero-profile">
                 <div class="profile-avatar">
                     <img src="photo/member_pic/member_9.jpg" alt="Hein Htet Zaw">
+                    <div class="floating-elements">
+                        <div class="floating-card design" data-aos="fade-left" data-aos-delay="500">
+                            <i class="fas fa-palette"></i> Design
+                        </div>
+                        <div class="floating-card code" data-aos="fade-right" data-aos-delay="600">
+                            <i class="fas fa-code"></i> Code
+                        </div>
+                        <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="700">
+                            <i class="fas fa-lightbulb"></i> Ideas
+                        </div>
+                    </div>
                 </div>
-                <h1 class="profile-name">Hein Htet Zaw</h1>
-                <p class="profile-role">Management</p>
+
+                <h1 data-aos="fade-up" data-aos-delay="200">
+                    Hello, I'm <span class="highlight">Hein Htet Zaw</span>
+                </h1>
+
+                <p class="profile-role" data-aos="fade-up" data-aos-delay="300">
+                    <span class="typed"></span>
+                </p>
             </div>
 
+            <!-- Single Card Section -->
             <div class="profile-section">
+                <!-- History -->
                 <h2 class="section-title">History <i class="fas fa-chevron-right"></i></h2>
                 <div class="section-content">
-                    <p>Motivated and versatile professional with a strong foundation in IT support, networking, and
+                    <p>
+                        Motivated and versatile professional with a strong foundation in IT support, networking, and
                         programming (Python, Java, SQL), complemented by certifications from Google, Oracle, and
                         HarvardX. Currently pursuing Digital Business at SIBA College, Thailand. Passionate about
                         creativity and visual storytelling, with strong graphic design skills—especially in Canva—for
                         creating engaging content. Seeking to contribute as a Graphic Designer. Experienced in
                         education, social impact, and entrepreneurship with proven leadership and communication
-                        abilities.</p>
+                        abilities.
+                    </p>
                 </div>
-            </div>
 
-            <div class="profile-section">
+                <!-- Skills -->
                 <h2 class="section-title">Skills <i class="fas fa-chevron-right"></i></h2>
                 <div class="section-content">
-                    <ul class="skill-list">
-                        <li>Technical: Python, Java, SQL, IT Support, Computer Networking</li>
-                        <li>Legal/Research: Criminal Justice, Human Rights, Ethical Analysis (HarvardX)</li>
-                        <li>Languages: English (IELTS 6.0), Burmese (Native), Japanese (Intermediate), Thai (Basic)</li>
-                        <li>Soft Skills: Leadership, Content Writing, Public Speaking, Project Coordination</li>
-                    </ul>
-                </div>
-            </div>
+                    <div class="skills-row">
+                        <div class="skill-box">
+                            <h3>Python</h3>
+                            <p>Programming & Development</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%;"></div>
+                            </div>
+                        </div>
 
-            <div class="profile-section">
-                <h2 class="section-title">Education <i class="fas fa-chevron-right"></i></h2>
+                        <div class="skill-box">
+                            <h3>Java</h3>
+                            <p>Programming & Development</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <h3>SQL</h3>
+                            <p>Database Management</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <h3>Networking</h3>
+                            <p>IT & Infrastructure</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <h3>Leadership</h3>
+                            <p>Soft Skills & Team Management</p>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education & Achievements Section -->
+                <h2 class="section-title">Education & Achievements <i class="fas fa-chevron-right"></i></h2>
                 <div class="section-content">
-                    <p>Victory Education Center (VEC), Mandalay
-                        High School Diploma | June 2018 – March 2020
-                        Passed matriculation exam with 2 Distinctions.
+                    <div class="card-columns">
 
-                        BEHS Mandalay
-                        Primary & Secondary Education | June 2009 – March 2018
-                    </p>
+                        <!-- Education Column -->
+                        <div class="card-column">
+                            <h3>Education</h3>
+
+                            <div class="card-list-item">
+                                <h4>High School Diploma</h4>
+                                <span class="highlight-year">June 2018 – March 2020</span>
+                                <p class="institution"><em>Victory Education Center (VEC), Mandalay</em></p>
+                                <p>Passed matriculation exam with 2 Distinctions.</p>
+                            </div>
+
+                            <div class="card-list-item">
+                                <h4>Primary & Secondary Education</h4>
+                                <span class="highlight-year">June 2009 – March 2018</span>
+                                <p class="institution"><em>BEHS Mandalay</em></p>
+                            </div>
+                        </div>
+
+                        <!-- Achievements Column -->
+                        <div class="card-column">
+                            <h3>Achievements</h3>
+
+                            <div class="card-list-item">
+                                <h4>Google IT Support Professional</h4>
+                                <span class="highlight-year">2022</span>
+                                <p>Technical Support Fundamentals | The Bits and Bytes of Computer Networking</p>
+                            </div>
+
+                            <div class="card-list-item">
+                                <h4>Oracle Certified – Database Design & Java Programming</h4>
+                                <span class="highlight-year">July 2024</span>
+                            </div>
+
+                            <div class="card-list-item">
+                                <h4>Python 3 Certification</h4>
+                                <span class="highlight-year">2024</span>
+                                <p>Programming Hub</p>
+                            </div>
+
+                            <div class="card-list-item">
+                                <h4>HarvardX – Justice (Ethics & Law)</h4>
+                                <span class="highlight-year">2023</span>
+                            </div>
+
+                            <div class="card-list-item">
+                                <h4>SDGAcademyX – Human Rights, Human Wrongs</h4>
+                                <span class="highlight-year">2024</span>
+                            </div>
+
+                            <div class="card-list-item">
+                                <h4>IELTS – Overall Band 6.0 (CEFR B2)</h4>
+                                <span class="highlight-year">2024</span>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>
 
-            <div class="profile-section">
-                <h2 class="section-title">Achievements <i class="fas fa-chevron-right"></i></h2>
-                <div class="section-content">
-                    <p>Google IT Support Professional
-                        Technical Support Fundamentals (2022) | The Bits and Bytes of Computer Networking (2022)
-
-                        Oracle Certified – Database Design & Java Programming (July 2024)
-                        Python 3 Certification (Programming Hub, 2024)
-                        HarvardX – Justice (Ethics & Law, 2023)
-                        SDGAcademyX – Human Rights, Human Wrongs (2024)
-                        IELTS – Overall Band 6.0 (CEFR B2, 2024)
-                    </p>
-                </div>
-            </div>
-
-            <div class="profile-section">
+                <!-- Future Plan -->
                 <h2 class="section-title">Future Plan <i class="fas fa-chevron-right"></i></h2>
                 <div class="section-content">
                     <ul>

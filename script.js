@@ -47,12 +47,14 @@ document.querySelectorAll('.member-card').forEach(card => {
 document.querySelectorAll('.section-title').forEach(title => {
     title.addEventListener('click', () => {
         const content = title.nextElementSibling;
+
+        // Toggle arrow rotation
         title.classList.toggle('expanded');
-        if (content.classList.contains('show')) {
-            content.classList.remove('show');
+
+        // Toggle content visibility with max-height animation
+        if (content.style.maxHeight) {
             content.style.maxHeight = null;
         } else {
-            content.classList.add('show');
             content.style.maxHeight = content.scrollHeight + 'px';
         }
     });
@@ -64,3 +66,41 @@ window.addEventListener('resize', () => {
         content.style.maxHeight = content.scrollHeight + 'px';
     });
 });
+
+// Simple typed effect
+function typeRoles(element, roles, speed = 150, pause = 2000) {
+    let roleIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function type() {
+        const currentRole = roles[roleIndex];
+        if (typing) {
+            element.textContent = currentRole.slice(0, charIndex + 1);
+            charIndex++;
+            if (charIndex === currentRole.length) {
+                typing = false;
+                setTimeout(type, pause);
+                return;
+            }
+        } else {
+            element.textContent = currentRole.slice(0, charIndex - 1);
+            charIndex--;
+            if (charIndex === 0) {
+                typing = true;
+                roleIndex = (roleIndex + 1) % roles.length;
+            }
+        }
+        setTimeout(type, speed);
+    }
+
+    type();
+}
+
+// Initialize typed roles
+const typedElement = document.querySelector('.profile-role .typed');
+if (typedElement) {
+    typeRoles(typedElement, ["Management", "IT Support", "Graphic Design"]);
+}
+
+typeRoles(document.querySelector('.profile-role .typed'), ["Management", "IT Support", "Graphic Design"]);
