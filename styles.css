@@ -235,6 +235,79 @@ nav ul li a:hover::after {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* About Us Page Styles */
+.about-container {
+    max-width: 1000px;
+    margin: 120px auto 60px;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.about-header p {
+    font-size: 1.2rem;
+    color: #667eea;
+    margin-top: 10px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1 1 500px;
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+.about-text ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.about-image {
+    flex: 1 1 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 20px;
+}
+
+/* Responsive for About Us */
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-text,
+    .about-image {
+        flex: 1 1 100%;
+    }
+}
 
 /* Main Content */
 .main-content {
@@ -552,16 +625,17 @@ footer {
 .profile-avatar {
     width: 250px;
     /* wider for rectangle */
-    height: auto;
+    height: 250px;
     /* maintain aspect ratio */
-    border-radius: 0;
+    border-radius: 25px;
     /* remove circle */
     flex-shrink: 0;
     overflow: hidden;
     border: none;
     /* optional: remove border */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: #6781f3 -5px 10px 30px 5px;
     order: 2;
+    margin-right: 75px;
 }
 
 /* Ensure text comes first */
@@ -640,7 +714,10 @@ footer {
 
 .section-content.show {
     display: block;
+    max-height: 2000px;
+    /* allow it to expand fully */
 }
+
 
 .skills-row {
     display: grid;

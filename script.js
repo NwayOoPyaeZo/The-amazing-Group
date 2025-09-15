@@ -97,10 +97,19 @@ function typeRoles(element, roles, speed = 150, pause = 2000) {
     type();
 }
 
-// Initialize typed roles
-const typedElement = document.querySelector('.profile-role .typed');
-if (typedElement) {
-    typeRoles(typedElement, ["Management", "IT Support", "Graphic Design"]);
-}
+// Initialize typed roles for every profile-role section
+document.querySelectorAll('.profile-role').forEach(roleEl => {
+    const typedElement = roleEl.querySelector('.typed');
+    const roles = roleEl.getAttribute('data-roles');
 
-typeRoles(document.querySelector('.profile-role .typed'), ["Management", "IT Support", "Graphic Design"]);
+    if (typedElement && roles) {
+        try {
+            const rolesArray = JSON.parse(roles);
+            if (Array.isArray(rolesArray) && rolesArray.length > 0) {
+                typeRoles(typedElement, rolesArray);
+            }
+        } catch (e) {
+            console.error("Invalid data-roles format for:", roleEl, e);
+        }
+    }
+});
