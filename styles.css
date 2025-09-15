@@ -560,7 +560,7 @@ footer {
     overflow: hidden;
     border: none;
     /* optional: remove border */
-    box-shadow: #6781f3 5px 10px 30px -5px;
+    box-shadow: #6781f3 -5px 30px 10px 5px;
     order: 2;
     margin-right: 75px;
 }
