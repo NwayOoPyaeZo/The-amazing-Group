@@ -552,16 +552,17 @@ footer {
 .profile-avatar {
     width: 250px;
     /* wider for rectangle */
-    height: auto;
+    height: 250px;
     /* maintain aspect ratio */
-    border-radius: 0;
+    border-radius: 25px;
     /* remove circle */
     flex-shrink: 0;
     overflow: hidden;
     border: none;
     /* optional: remove border */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: #6781f3 5px 10px 30px -5px;
     order: 2;
+    margin-right: 75px;
 }
 
 /* Ensure text comes first */
