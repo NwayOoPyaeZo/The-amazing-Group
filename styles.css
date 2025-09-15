@@ -537,24 +537,52 @@ footer {
 }
 
 .profile-header {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* text left, avatar right */
+    gap: 40px;
+    /* spacing between text and avatar */
+    text-align: left;
     margin-bottom: 40px;
+    flex-wrap: wrap;
+    /* responsive wrap */
 }
 
 .profile-avatar {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    margin: 0 auto 25px;
+    width: 250px;
+    /* wider for rectangle */
+    height: auto;
+    /* maintain aspect ratio */
+    border-radius: 0;
+    /* remove circle */
+    flex-shrink: 0;
     overflow: hidden;
-    border: 5px solid #f0f2f5;
+    border: none;
+    /* optional: remove border */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    order: 2;
+}
+
+/* Ensure text comes first */
+.profile-header h1,
+.profile-role {
+    order: 1;
 }
 
 .profile-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* fills the rectangle nicely */
+    border-radius: 0;
+    /* remove circle from image itself */
+}
+
+/* Ensure text comes first */
+.profile-header h1,
+.profile-role {
+    order: 1;
 }
 
 .profile-name {
